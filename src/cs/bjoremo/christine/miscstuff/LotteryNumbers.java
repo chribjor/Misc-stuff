@@ -41,7 +41,7 @@ public class LotteryNumbers {
 
     public int[] generateArray() {
         int[] lottoArray = new int[7];
-        int pointer = 0;
+        int pointer = 0; //pekar på nästa nummers plats i arrayen
         boolean isRepeated = false;
 
         while (lottoArray[6] == 0) {
