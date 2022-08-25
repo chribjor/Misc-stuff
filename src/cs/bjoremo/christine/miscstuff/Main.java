@@ -1,5 +1,6 @@
 package cs.bjoremo.christine.miscstuff;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -12,6 +13,7 @@ public class Main {
 
         System.out.println(lb.generateSet());
         System.out.println(lb.generateList());
+        System.out.println(Arrays.toString(lb.generateArray()));
 
     }
 }

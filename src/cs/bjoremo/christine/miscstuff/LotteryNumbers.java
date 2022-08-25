@@ -15,10 +15,10 @@ public class LotteryNumbers {
         Set<Integer> lotteryRow = new HashSet<Integer>();
 
         //slumpa 7 olika nummer som ska sparas i settet.
-        while (lotteryRow.size() <7) {
+        while (lotteryRow.size() < 7) {
             int number = rand.nextInt(max + 1 - 1) + min;
 
-            if (!lotteryRow.contains(number)){
+            if (!lotteryRow.contains(number)) {
                 lotteryRow.add(number);
             }
         }
@@ -37,5 +37,27 @@ public class LotteryNumbers {
             }
         }
         return lottoRow;
+    }
+
+    public int[] generateArray() {
+        int[] lottoArray = new int[7];
+        int pointer = 0;
+        boolean isRepeated = false;
+
+        while (lottoArray[6] == 0) {
+            int number = rand.nextInt(max + 1 - 1) + min;
+
+            for (int i = 0; i <= pointer; i++) {
+                if (number == lottoArray[i]) {
+                    isRepeated = true;
+                    break;
+                }
+            }
+            if(!isRepeated){
+                lottoArray[pointer] = number;
+                pointer++;
+            }
+        }
+        return lottoArray;
     }
 }
