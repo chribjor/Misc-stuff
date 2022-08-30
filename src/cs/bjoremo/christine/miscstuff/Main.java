@@ -14,5 +14,6 @@ public class Main {
         System.out.println(Arrays.toString(lb.generateArray()));
         //System.out.println(fwn.canDivideEvenly(9, 3));
         System.out.println(sn.numericalOrder());
+        System.out.println(sn.generateMap());
     }
 }

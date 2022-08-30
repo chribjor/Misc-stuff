@@ -12,7 +12,7 @@ public class LotteryNumbers {
     public Set<Integer> generateSet() {
         //Skapar ett set där lottoraden ska förvaras
         // Set<> tillåter inga dubbletter av element, därför behövs inte kontroll göras
-        Set<Integer> lotteryRow = new HashSet<Integer>();
+        Set<Integer> lotteryRow = new HashSet<>();
 
         //slumpa 7 olika nummer som ska sparas i settet.
         while (lotteryRow.size() < 7) {
@@ -59,5 +59,21 @@ public class LotteryNumbers {
             }
         }
         return lottoArray;
+    }
+
+    public Map<Integer, Integer> generateMap(){
+        HashMap<Integer, Integer> lottoMap = new HashMap<Integer, Integer>();
+        int size = 0;
+
+        while (lottoMap.size() < 7){
+            Integer hej = rand.nextInt(max + 1 - 1) + min;
+
+            if(!lottoMap.containsValue(hej)){
+                lottoMap.put(size, hej);
+                size++;
+            }
+        }
+        return lottoMap;
+
     }
 }
