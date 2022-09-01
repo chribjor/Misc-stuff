@@ -18,11 +18,10 @@ public class LotteryNumbers {
         while (lotteryRow.size() < 7) {
             int number = rand.nextInt(max + 1 - 1) + min;
 
-            if (!lotteryRow.contains(number)) {
-                lotteryRow.add(number);
-            }
+            lotteryRow.add(number);
         }
         //Skriv ut hela settet/lottoraden
+        System.out.println("This is your lotto row: " + lotteryRow);
         return lotteryRow;
     }
 
@@ -36,44 +35,44 @@ public class LotteryNumbers {
                 lottoRow.add(number);
             }
         }
+        System.out.println("This is your lotto row: " + lottoRow);
         return lottoRow;
     }
 
-    public int[] generateArray() {
+    public void generateArray() {
         int[] lottoArray = new int[7];
         int pointer = 0; //pekar på nästa nummers plats i arrayen
         boolean isRepeated = false;
 
-        while (lottoArray[6] == 0) {
+        do {
             int number = rand.nextInt(max + 1 - 1) + min;
-
             for (int i = 0; i <= pointer; i++) {
                 if (number == lottoArray[i]) {
                     isRepeated = true;
                     break;
                 }
             }
-            if(!isRepeated){
+            if (!isRepeated) {
                 lottoArray[pointer] = number;
                 pointer++;
             }
-        }
-        return lottoArray;
+        } while (lottoArray[6] == 0);
+        System.out.println(Arrays.toString(lottoArray));
     }
 
-    public Map<Integer, Integer> generateMap(){
-        HashMap<Integer, Integer> lottoMap = new HashMap<Integer, Integer>();
+    public Map<Integer, Integer> generateMap() {
+        HashMap<Integer, Integer> lottoMap = new HashMap<>();
         int size = 0;
 
-        while (lottoMap.size() < 7){
+        while (lottoMap.size() < 7) {
             Integer hej = rand.nextInt(max + 1 - 1) + min;
 
-            if(!lottoMap.containsValue(hej)){
+            if (!lottoMap.containsValue(hej)) {
                 lottoMap.put(size, hej);
                 size++;
             }
         }
+        System.out.println("This is your lotto row: " + lottoMap);
         return lottoMap;
-
     }
 }
