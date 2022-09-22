@@ -15,6 +15,8 @@ public class SortNumbers extends LotteryNumbers{
         Collections.sort(lottoRowList);
         Collections.sort(lottoListSet);
 
+        System.out.println(lottoListSet);
+
         return lottoListSet;
     }
 

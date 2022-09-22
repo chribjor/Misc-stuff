@@ -16,7 +16,7 @@ public class Main {
         //System.out.println(fwn.canDivideEvenly(9, 3));
        // System.out.println(sn.numericalOrder());
         //System.out.println(sn.generateMap());
-        System.out.println("Welcome to Gambling With Numbers!\nLet's play some Lottery!\n");
-        System.out.println(ui.startLotto());
+        System.out.println("Welcome, Let's play some Lottery!\n");
+        ui.startLotto();
     }
 }

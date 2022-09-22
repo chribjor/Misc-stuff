@@ -7,31 +7,12 @@ public class TextUI extends LotteryNumbers {
     private final LotteryNumbers lot = new LotteryNumbers();
     private final Scanner in = new Scanner(System.in);
 
-    public void userMenu() {
-        System.out.println("Press 1 to enter your age:");
-    }
-
     public void lottoMenu() {
         System.out.println("Which method do you want to play your lotto row with? Choose from the menu below:\n");
         System.out.println("1. Lotto row with a 'Set'");
         System.out.println("2. Lotto row with a 'List'");
         System.out.println("3. Lotto row with an 'Array'");
         System.out.println("4. Lotto row with a 'Map'");
-    }
-
-    public boolean startLotto() {
-        boolean playing = true;
-        do {
-            userMenu();
-            int menuSelection = getValueFromUserInt();
-            if (menuSelection == 1) {
-                addAge();
-                //case 2 -> addName();
-            } else {
-                System.out.println("Incorrect value!");
-            }
-        } while (playing);
-        return playing;
     }
 
     // private för att den behövs bara användas i denna klass. Ingen ska ändra på innehållet
@@ -55,9 +36,8 @@ public class TextUI extends LotteryNumbers {
         startLotto();
     }
 
-    public void addAge() {
+    public void startLotto() {
         int age = 0;
-        boolean playing = true;
 
         while (true) {
             System.out.println("Please enter your age: ");
@@ -89,7 +69,7 @@ public class TextUI extends LotteryNumbers {
                             System.exit(0);
                         }
                     }
-                } while (playing);
+                } while (true);
             } else if (age != -1) {
                 System.out.println("Sorry, you have to be 18 or older.");
                 System.exit(0);;

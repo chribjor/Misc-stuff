@@ -39,7 +39,7 @@ public class LotteryNumbers {
         return lottoRow;
     }
 
-    public void generateArray() {
+    public int[] generateArray() {
         int[] lottoArray = new int[7];
         int pointer = 0; //pekar på nästa nummers plats i arrayen
         boolean isRepeated = false;
@@ -58,6 +58,7 @@ public class LotteryNumbers {
             }
         } while (lottoArray[6] == 0);
         System.out.println(Arrays.toString(lottoArray));
+        return lottoArray;
     }
 
     public Map<Integer, Integer> generateMap() {
@@ -65,10 +66,10 @@ public class LotteryNumbers {
         int size = 0;
 
         while (lottoMap.size() < 7) {
-            Integer hej = rand.nextInt(max + 1 - 1) + min;
+            Integer number = rand.nextInt(max + 1 - 1) + min;
 
-            if (!lottoMap.containsValue(hej)) {
-                lottoMap.put(size, hej);
+            if (!lottoMap.containsValue(number)) {
+                lottoMap.put(size, number);
                 size++;
             }
         }
