@@ -5,18 +5,16 @@ import java.util.*;
 public class LotteryNumbers {
 
     Random rand = new Random();
-    int min = 1;
-    int max = 35;
 
     // olika metoder som generar olika lottorader
-    public Set<Integer> generateSet() {
+    public Set<Integer> generateSet(int minNumber, int maxNumber, int quantity) {
         //Skapar ett set där lottoraden ska förvaras
         // Set<> tillåter inga dubbletter av element, därför behövs inte kontroll göras
         Set<Integer> lotteryRow = new HashSet<>();
 
         //slumpa 7 olika nummer som ska sparas i settet.
-        while (lotteryRow.size() < 7) {
-            int number = rand.nextInt(max + 1 - 1) + min;
+        while (lotteryRow.size() < quantity) {
+            int number = rand.nextInt(maxNumber + 1 - 1) + minNumber;
 
             lotteryRow.add(number);
         }
@@ -25,11 +23,11 @@ public class LotteryNumbers {
         return lotteryRow;
     }
 
-    public List<Integer> generateList() {
+    public List<Integer> generateList(int minNumber, int maxNumber, int quantity) {
         List<Integer> lottoRow = new ArrayList<>();
 
-        while (lottoRow.size() < 7) {
-            int number = rand.nextInt(max + 1 - 1) + min;
+        while (lottoRow.size() < quantity) {
+            int number = rand.nextInt(maxNumber + 1 - 1) + minNumber;
 
             if (!lottoRow.contains(number)) {
                 lottoRow.add(number);
@@ -39,13 +37,13 @@ public class LotteryNumbers {
         return lottoRow;
     }
 
-    public int[] generateArray() {
-        int[] lottoArray = new int[7];
+    public int[] generateArray(int minNumber, int maxNumber, int quantity) {
+        int[] lottoArray = new int[quantity];
         int pointer = 0; //pekar på nästa nummers plats i arrayen
         boolean isRepeated = false;
 
         do {
-            int number = rand.nextInt(max + 1 - 1) + min;
+            int number = rand.nextInt(maxNumber + 1 - 1) + minNumber;
             for (int i = 0; i <= pointer; i++) {
                 if (number == lottoArray[i]) {
                     isRepeated = true;
@@ -56,17 +54,17 @@ public class LotteryNumbers {
                 lottoArray[pointer] = number;
                 pointer++;
             }
-        } while (lottoArray[6] == 0);
+        } while (lottoArray[quantity-1] == 0);
         System.out.println(Arrays.toString(lottoArray));
         return lottoArray;
     }
 
-    public Map<Integer, Integer> generateMap() {
+    public Map<Integer, Integer> generateMap(int minNumber, int maxNumber, int quantity) {
         HashMap<Integer, Integer> lottoMap = new HashMap<>();
         int size = 0;
 
-        while (lottoMap.size() < 7) {
-            Integer number = rand.nextInt(max + 1 - 1) + min;
+        while (lottoMap.size() < quantity) {
+            Integer number = rand.nextInt(maxNumber + 1 - 1) + minNumber;
 
             if (!lottoMap.containsValue(number)) {
                 lottoMap.put(size, number);

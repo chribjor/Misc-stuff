@@ -49,22 +49,22 @@ public class TextUI extends LotteryNumbers {
                     String thankYou = "\nThank you for playing!";
                     switch (menuSelection) {
                         case 1 -> {
-                            generateSet();
+                            generateSet(1,35, 7);
                             System.out.println(thankYou);
                             System.exit(0);
                         }
                         case 2 -> {
-                            generateList();
+                            generateList(1,35, 11);
                             System.out.println(thankYou);
                             System.exit(0);
                         }
                         case 3 -> {
-                            generateArray();
+                            generateArray(1,35, 11);
                             System.out.println(thankYou);
                             System.exit(0);
                         }
                         case 4 -> {
-                            generateMap();
+                            generateMap(1,35, 7);
                             System.out.println(thankYou);
                             System.exit(0);
                         }

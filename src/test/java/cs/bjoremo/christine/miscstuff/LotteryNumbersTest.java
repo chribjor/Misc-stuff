@@ -17,8 +17,8 @@ class LotteryNumbersTest {
     }
 
     @Test
-    void lottoNumbersShouldBeUniqueAndBetween0and35Set() {
-        var lotteryRow = ln.generateSet();
+    void lottoNumbersShouldBeUniqueAndBetweenSpanSet() {
+        var lotteryRow = ln.generateSet(1,35, 7);
 
         assertThat(lotteryRow.size()).isEqualTo(7);
 
@@ -29,12 +29,12 @@ class LotteryNumbersTest {
     }
 
     @Test
-    void lottoNumbersShouldBeUniqueAndBeBetween0and35List() {
-        var lotteryRowList = ln.generateList();
+    void lottoNumbersShouldBeUniqueAndBeBetweenSpanList() {
+        var lotteryRowList = ln.generateList(1,35, 11);
 
         Set<Integer> lotteryRow = new HashSet<>(lotteryRowList);
 
-        assertThat(lotteryRow.size()).isEqualTo(7);
+        assertThat(lotteryRow.size()).isEqualTo(11);
 
         for (int lotteryNumber : lotteryRow) {
             assertThat(lotteryNumber).isGreaterThan(0);
@@ -44,8 +44,8 @@ class LotteryNumbersTest {
     }
 
     @Test
-    void lottoNumbersShouldBeUniqueAndBeBetween0and35Array() {
-        var lotteryRowArray = ln.generateArray();
+    void lottoNumbersShouldBeUniqueAndBeBetweenSpanArray() {
+        var lotteryRowArray = ln.generateArray(1,35, 11);
 
         Set<Integer> lotteryRow = new HashSet<>();
 
@@ -54,12 +54,12 @@ class LotteryNumbersTest {
             assertThat(lotteryNumber).isLessThanOrEqualTo(35);
             lotteryRow.add(lotteryNumber);
         }
-        assertThat(lotteryRow.size()).isEqualTo(7);
+        assertThat(lotteryRow.size()).isEqualTo(11);
     }
 
     @Test
-    void lottoNumbersShouldBeUniqueAndBeBetween0and35Map() {
-        var lotteryRowMap = ln.generateMap();
+    void lottoNumbersShouldBeUniqueAndBeBetweenSpanMap() {
+        var lotteryRowMap = ln.generateMap(1,35, 7);
 
         Set<Integer> lotteryRow = new HashSet<>(lotteryRowMap.values());
 

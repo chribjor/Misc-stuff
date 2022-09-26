@@ -8,11 +8,9 @@ import java.util.Set;
 public class SortNumbers extends LotteryNumbers{
 
     public List<Integer> numericalOrder(){
-        List<Integer> lottoRowList = generateList();
-        Set<Integer> lottoRowSet = generateSet();
+        Set<Integer> lottoRowSet = generateSet(1,50, 10);
         List<Integer> lottoListSet = new ArrayList<>(lottoRowSet);
 
-        Collections.sort(lottoRowList);
         Collections.sort(lottoListSet);
 
         System.out.println(lottoListSet);
