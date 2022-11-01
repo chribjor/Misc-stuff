@@ -2,17 +2,20 @@ package cs.bjoremo.christine.miscstuff;
 
 import java.util.Scanner;
 
-public class TextUI extends LotteryNumbers {
+public class TextUI  {
 
-    private final LotteryNumbers lot = new LotteryNumbers();
     private final Scanner in = new Scanner(System.in);
+    private final Lotto lotto = new Lotto();
+    private final Keno keno = new Keno();
+    private final Eurojackpot euro = new Eurojackpot();
+    private final Vikinglotto vikinglotto = new Vikinglotto();
 
     public void lottoMenu() {
-        System.out.println("Which method do you want to play your lotto row with? Choose from the menu below:\n");
-        System.out.println("1. Lotto row with a 'Set'");
-        System.out.println("2. Lotto row with a 'List'");
-        System.out.println("3. Lotto row with an 'Array'");
-        System.out.println("4. Lotto row with a 'Map'");
+        System.out.println("Which method do you want to play? Choose from the menu below:\n");
+        System.out.println("1. Lotto with the help of a Map");
+        System.out.println("2. Keno with the help of a List");
+        System.out.println("3. Vikinglotto with the help of a Set");
+        System.out.println("4. Eurojackpot with the help of an Array");
     }
 
     // private för att den behövs bara användas i denna klass. Ingen ska ändra på innehållet
@@ -49,22 +52,22 @@ public class TextUI extends LotteryNumbers {
                     String thankYou = "\nThank you for playing!";
                     switch (menuSelection) {
                         case 1 -> {
-                            generateSet(1,35, 7);
+                            lotto.getLottoNumbers();
                             System.out.println(thankYou);
                             System.exit(0);
                         }
                         case 2 -> {
-                            generateList(1,35, 11);
+                            keno.getKenoNumbers();
                             System.out.println(thankYou);
                             System.exit(0);
                         }
                         case 3 -> {
-                            generateArray(1,35, 11);
+                            vikinglotto.getOrdinaryNumber();
                             System.out.println(thankYou);
                             System.exit(0);
                         }
                         case 4 -> {
-                            generateMap(1,35, 7);
+                            euro.getOrdinaryNumbers();
                             System.out.println(thankYou);
                             System.exit(0);
                         }

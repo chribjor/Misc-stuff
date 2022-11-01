@@ -12,13 +12,13 @@ class LotteryNumbersTest {
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
-        ln = new LotteryNumbers();
+     //   ln = new LotteryNumbers();
         sn = new SortNumbers();
     }
 
     @Test
     void lottoNumbersShouldBeUniqueAndBetweenSpanSet() {
-        var lotteryRow = ln.generateSet(1,35, 7);
+        var lotteryRow = ln.generateSet();
 
         assertThat(lotteryRow.size()).isEqualTo(7);
 
@@ -30,7 +30,7 @@ class LotteryNumbersTest {
 
     @Test
     void lottoNumbersShouldBeUniqueAndBeBetweenSpanList() {
-        var lotteryRowList = ln.generateList(1,35, 11);
+        var lotteryRowList = ln.generateList();
 
         Set<Integer> lotteryRow = new HashSet<>(lotteryRowList);
 
@@ -45,7 +45,7 @@ class LotteryNumbersTest {
 
     @Test
     void lottoNumbersShouldBeUniqueAndBeBetweenSpanArray() {
-        var lotteryRowArray = ln.generateArray(1,35, 11);
+        var lotteryRowArray = ln.generateArray();
 
         Set<Integer> lotteryRow = new HashSet<>();
 
@@ -59,7 +59,7 @@ class LotteryNumbersTest {
 
     @Test
     void lottoNumbersShouldBeUniqueAndBeBetweenSpanMap() {
-        var lotteryRowMap = ln.generateMap(1,35, 7);
+        var lotteryRowMap = ln.generateMap();
 
         Set<Integer> lotteryRow = new HashSet<>(lotteryRowMap.values());
 

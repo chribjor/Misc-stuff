@@ -5,9 +5,8 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        LotteryNumbers lb = new LotteryNumbers();
-        FunWithNumbers fwn = new FunWithNumbers();
-        SortNumbers sn = new SortNumbers();
+       // FunWithNumbers fwn = new FunWithNumbers();
+       // SortNumbers sn = new SortNumbers();
         TextUI ui = new TextUI();
 
        // System.out.println(lb.generateSet());

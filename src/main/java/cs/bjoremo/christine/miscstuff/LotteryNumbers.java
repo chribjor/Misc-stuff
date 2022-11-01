@@ -2,12 +2,21 @@ package cs.bjoremo.christine.miscstuff;
 
 import java.util.*;
 
-public class LotteryNumbers {
+public abstract class LotteryNumbers {
 
+    private final int minNumber;
+    private final int maxNumber;
+    private final int quantity;
     Random rand = new Random();
 
+    public LotteryNumbers(int minNumber, int maxNumber, int quantity){
+        this.minNumber = minNumber;
+        this.maxNumber = maxNumber;
+        this.quantity = quantity;
+    }
+
     // olika metoder som generar olika lottorader
-    public Set<Integer> generateSet(int minNumber, int maxNumber, int quantity) {
+    public Set<Integer> generateSet() {
         //Skapar ett set där lottoraden ska förvaras
         // Set<> tillåter inga dubbletter av element, därför behövs inte kontroll göras
         Set<Integer> lotteryRow = new HashSet<>();
@@ -23,7 +32,7 @@ public class LotteryNumbers {
         return lotteryRow;
     }
 
-    public List<Integer> generateList(int minNumber, int maxNumber, int quantity) {
+    public List<Integer> generateList() {
         List<Integer> lottoRow = new ArrayList<>();
 
         while (lottoRow.size() < quantity) {
@@ -37,7 +46,7 @@ public class LotteryNumbers {
         return lottoRow;
     }
 
-    public int[] generateArray(int minNumber, int maxNumber, int quantity) {
+    public int[] generateArray() {
         int[] lottoArray = new int[quantity];
         int pointer = 0; //pekar på nästa nummers plats i arrayen
         boolean isRepeated = false;
@@ -55,11 +64,12 @@ public class LotteryNumbers {
                 pointer++;
             }
         } while (lottoArray[quantity-1] == 0);
+
         System.out.println(Arrays.toString(lottoArray));
         return lottoArray;
     }
 
-    public Map<Integer, Integer> generateMap(int minNumber, int maxNumber, int quantity) {
+    public Map<Integer, Integer> generateMap() {
         HashMap<Integer, Integer> lottoMap = new HashMap<>();
         int size = 0;
 
