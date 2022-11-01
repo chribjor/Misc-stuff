@@ -50,23 +50,28 @@ public class TextUI  {
                     lottoMenu();
                     int menuSelection = getValueFromUserInt();
                     String thankYou = "\nThank you for playing!";
+                    String lotteryrowText = "\nThis is your lotteryrow:";
                     switch (menuSelection) {
                         case 1 -> {
+                            System.out.println(lotteryrowText);
                             lotto.getLottoNumbers();
                             System.out.println(thankYou);
                             System.exit(0);
                         }
                         case 2 -> {
+                            System.out.println(lotteryrowText);
                             keno.getKenoNumbers();
                             System.out.println(thankYou);
                             System.exit(0);
                         }
                         case 3 -> {
+                            System.out.println(lotteryrowText);
                             vikinglotto.getOrdinaryNumber();
                             System.out.println(thankYou);
                             System.exit(0);
                         }
                         case 4 -> {
+                            System.out.println(lotteryrowText);
                             euro.getOrdinaryNumbers();
                             System.out.println(thankYou);
                             System.exit(0);

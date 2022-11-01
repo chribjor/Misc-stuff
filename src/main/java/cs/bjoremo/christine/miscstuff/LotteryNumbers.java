@@ -27,8 +27,6 @@ public abstract class LotteryNumbers {
 
             lotteryRow.add(number);
         }
-        //Skriv ut hela settet/lottoraden
-        System.out.println("This is your lotto row: " + lotteryRow);
         return lotteryRow;
     }
 
@@ -42,7 +40,6 @@ public abstract class LotteryNumbers {
                 lottoRow.add(number);
             }
         }
-        System.out.println("This is your lotto row: " + lottoRow);
         return lottoRow;
     }
 
@@ -65,7 +62,6 @@ public abstract class LotteryNumbers {
             }
         } while (lottoArray[quantity-1] == 0);
 
-        System.out.println(Arrays.toString(lottoArray));
         return lottoArray;
     }
 
@@ -81,7 +77,6 @@ public abstract class LotteryNumbers {
                 size++;
             }
         }
-        System.out.println("This is your lotto row: " + lottoMap);
         return lottoMap;
     }
 }
